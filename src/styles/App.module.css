@@ -1,0 +1,68 @@
+@keyframes surge {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.main-element {
+  background-color: #fff;
+  width: 768px;
+  height: 480px;
+  border-radius: 16px;
+}
+.main-element__heading {
+  margin-bottom: 16px;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  background-image: linear-gradient(45deg, #6c5ce7, #55efc4);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-background-clip: text;
+  background-clip: text;
+}
+.main-element__form {
+  margin-bottom: 16px;
+}
+.main-element__form__field {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 65% 35%;
+}
+
+.bmi-result__value {
+  font-size: 6rem;
+  font-weight: 700;
+  text-align: center;
+  color: #d0d0d0;
+  margin-bottom: 16px;
+}
+
+.bmi-result__classification {
+  padding: 4px 12px;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  animation: surge 0.5s ease-out;
+}
+.bmi-result__classification--good {
+  background-color: #18be18;
+}
+.bmi-result__classification--ok {
+  background-color: #ffd000;
+}
+.bmi-result__classification--concerning {
+  background-color: #ff8800;
+}
+.bmi-result__classification--bad {
+  background-color: #ca1616;
+}
+.bmi-result__classification--extreme {
+  background-color: rgb(131.3, 14.3, 14.3);
+}
+
+/*# sourceMappingURL=App.module.css.map */

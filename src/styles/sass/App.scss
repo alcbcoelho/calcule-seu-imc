@@ -1,0 +1,82 @@
+@use 'sass:color';
+
+// VARIABLES
+$classification-good: #18be18;
+$classification-concerning: #ff8800;
+$classification-ok: #ffd000;
+$classification-bad: #ca1616;
+$classification-extreme: color.scale(#ca1616, $lightness: -35%);
+
+$main-element-background-color: #fff;
+
+// ANIMATIONS
+@keyframes surge {
+    from {opacity: 0; transform: translateY(25px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+// STYLES
+.main-element {
+    background-color: $main-element-background-color;
+    width: 768px;
+    height: 480px;
+    border-radius: 16px;
+
+    &__heading {
+        margin-bottom: 16px;
+        font-size: 3rem;
+        font-weight: 700;
+        text-align: center;
+        background-image: linear-gradient(45deg, #6c5ce7, #55efc4);
+        -webkit-text-fill-color: transparent;
+        -webkit-text-background-clip: text;
+        background-clip: text;
+    }
+    
+    &__form {
+        margin-bottom: 16px;
+
+        &__field {
+            display: grid;
+            align-items: center;
+            grid-template-columns: 65% 35%;
+        }
+    }
+}
+
+.bmi-result__value {
+    font-size: 6rem;
+    font-weight: 700;
+    text-align: center;
+    color: #d0d0d0;
+    margin-bottom: 16px;
+}
+
+.bmi-result__classification {
+    padding: 4px 12px;
+    border-radius: 16px;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    animation: surge 0.5s ease-out;
+
+    &--good {
+        background-color: $classification-good;
+    }
+
+    &--ok {
+        background-color: $classification-ok;
+    }
+
+    &--concerning {
+        background-color: $classification-concerning;
+    }
+
+    &--bad {
+        background-color: $classification-bad;
+    }
+
+    &--extreme {
+        background-color: $classification-extreme;
+    }
+}
